@@ -18,5 +18,6 @@ public class ConsoleEx {
 		int value = scanner.nextInt();
 		System.out.println(value);
 		scanner.close();
+		//
 	}
 }
