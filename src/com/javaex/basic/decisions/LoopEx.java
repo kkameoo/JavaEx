@@ -9,7 +9,9 @@ public class LoopEx {
 		// TODO Auto-generated method stub
 //		whileEx2();
 //		doWhileEx();
-		ForEx();
+//		ForEx();
+//		ContinueEx();
+//		BreakEx();
 	}
 	
 	private static void whileEx() {
@@ -65,4 +67,34 @@ public class LoopEx {
 		}
 		scanner.close();
 	}
+	
+	private static void ContinueEx() {
+		
+		for (int i = 0; i < 20; i++) {
+			if (i % 2 == 0 || i % 3 == 0) {
+				continue;
+			}
+			System.out.println(i);
+		}
+	}
+	
+	private static void BreakEx() {
+		
+		int sum = 0;
+		int num = 300;
+		while( true ) {
+			sum += num;
+			System.out.println("sum : " + sum + "num : " + num);
+			num++;
+			if (sum > 5000) {
+				break;
+			}
+		}
+	}
+	
+	private static void star() {
+		
+		
+	}
+	
 }
