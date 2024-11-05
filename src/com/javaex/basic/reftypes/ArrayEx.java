@@ -1,13 +1,14 @@
 package com.javaex.basic.reftypes;
 
+import java.util.Arrays;
 import java.util.Iterator;
 
 public class ArrayEx {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		usingArray();
-		
+//		usingArray();
+		multiDimArrayEx();
 	}
 	
 	private static void usingArray() {
@@ -32,5 +33,37 @@ public class ArrayEx {
 			System.out.printf(" %s씨 는 %d점을 맞았고 %f 키를 가진다.%n", names[i],scores[i],heights[i] );
 		}
 		
-	} 
+		int scores2[] = scores; // 참조 복제 -> 객체의 주소를 가르키는 것
+		
+		System.out.println("scores:" + Arrays.toString(scores));
+		System.out.println("scores2:" + Arrays.toString(scores2));
+		System.out.println(scores == scores2);
+		scores2[2] = 100;
+		System.out.println("scores:" + Arrays.toString(scores)); // 원본 값이 바뀜
+		
+	}
+	
+	private static void multiDimArrayEx() {
+		int[][] twoDimens = new int[5][10];
+		
+		// 기본 데이터가 있을 경우
+		int table[][] = {
+				{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, 
+				{1, 2, 3, 4, 5, 6, 7, 8, 9 ,0}, 
+				{2, 3, 4, 5, 6, 7, 8, 9, 0 ,1}, 
+				{3, 4, 5, 6, 7, 8, 9, 0, 1 ,2}, 
+				{4, 5, 6, 7, 8, 9, 0, 1, 2 ,3}
+		};
+		
+		System.out.println("table.length : " + table.length);
+		System.out.println("table.0.length : " + table[0].length);
+		
+		// table 배열 내부의 모든 요소의 합을 구하자
+		for (int i = 0; i < table.length; i++) {
+			for (int j = 0; j < table[i].length; j++) {
+				System.out.print(table[i][j] + "\t");
+			}
+			System.out.println();
+		}
+	}
 }

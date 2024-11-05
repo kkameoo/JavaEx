@@ -14,7 +14,9 @@ public class Practice03 {
 //		ex11();
 //		ex12();
 //		ex13();
-		ex14();
+//		ex14();
+//		ex15();
+		ex16();
 	}
 	
 	private static void ex06() {
@@ -142,6 +144,36 @@ public class Practice03 {
 		
 		System.out.println();
 		System.out.println("합계: "+ sum);
+		scanner.close();
+	}
+	
+	private static void ex15() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("숫자를 입력하세요: ");
+		int num = scanner.nextInt();
+		for (int i = 1; i <= num; i++ ) {
+			if (num%i == 0) {
+				System.out.println(i);
+			}
+		}
+		scanner.close();
+	}
+	
+	private static void ex16() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("숫자를 입력하세요: ");
+		int num = scanner.nextInt();
+		int count = 0;
+		int sum = 0;
+	
+		for (int i = 1; i <= num; i++) {
+			if (i%5 == 0) {
+				count++;
+				sum += i;
+			}
+		}
+		System.out.println("5의배수의 개수: " + count);
+		System.out.println("5의배수의 합 : " + sum);
 		scanner.close();
 	}
 	
