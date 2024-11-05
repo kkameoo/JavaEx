@@ -2,7 +2,7 @@ package com.javaex.practice;
 
 import java.util.Scanner;
 
-public class Ex06 {
+public class Practice02 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -16,7 +16,12 @@ public class Ex06 {
 //		ex13();
 //		ex14();
 //		ex15();
-		ex16();
+//		ex16();
+//		ex17();
+//		ex18();
+//		ex20();
+//		ex22();
+		ex23();
 
 	}
 	
@@ -244,12 +249,124 @@ public class Ex06 {
 	}
 	
 	private static void ex16() {
-//		System.out.println("숫자를 입력해 주세요");
-//		Scanner scanner = new Scanner(System.in);
-//		System.out.printf("숫자: ");
-//		double num =scanner.nextInt();
+		System.out.println("숫자를 입력해 주세요");
+		Scanner scanner = new Scanner(System.in);
+		System.out.printf("숫자: ");
+		double num =scanner.nextInt();
+		double result;
+		if (num <= 0) {
+			result = (num*num*num) - (9*num) + 2;
+		} else {
+			result = 7 * num + 2;
+		}
+		System.out.printf("계산결과는 %.1f 입니다.", result);
+		scanner.close();
+	}
+	
+	private static void ex17() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("수익을 입력해 주세요");
+		System.out.print("금익: ");
+		double price = scanner.nextInt();
+		double result;
 		
+		if (price >= 0 && price <= 1000 ) {
+			result = 0.09 * price;
+			System.out.printf("소득세는 %.1f 입니다.", result);
+		} else if (price > 1000 && price <= 4000) {
+			result = 1000*0.09 + 0.18*(price - 1000);
+			System.out.printf("소득세는 %.1f 입니다.", result);
+		} else if (price > 4000 && price < 8000) {
+			result = 1000*0.09 + 3000*0.18 + 0.27*(price - 4000);
+			System.out.printf("소득세는 %.1f 입니다.", result);
+		} else if (price >= 8000){
+			result = 1000*0.09 + 3000*0.18 + 4000*0.27 + 0.36*(price - 8000);
+			System.out.printf("소득세는 %.1f 입니다.", result);
+		} else {
+			System.out.println("잘못 입력했습니다.");
+		}
+		scanner.close();
+	}
+	
+	private static void ex18() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("알파벳 1글자(소문자)를 입력하세요");
+		System.out.print("알파벳: ");
+		char alphabet = scanner.next().charAt(0);
+		
+		switch (alphabet) {
+			case 'a', 'e', 'i', 'o', 'u' : {
+				System.out.println("모음입니다.");
+				break;
+			}
+			default : 
+				System.out.println("자음입니다.");
+				break;
+		}
+		scanner.close();	
+	}
+	
+	private static void ex20() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("알파벳 1글자(소문자)를 입력하세요");
+		System.out.print("알파벳: ");
+		char alphabet = scanner.next().charAt(0);
+		
+		if ( alphabet == 'a' || alphabet == 'e' ||  alphabet == 'i' || alphabet == 'o' || alphabet == 'u') {
+			System.out.println("모음입니다.");
+		} else {
+			System.out.println("자음입니다.");
+		}
+		scanner.close();
+	}
+	
+	private static void ex22() {
+		System.out.println("숫자 3개를 입력해주세요");
+		Scanner scanner = new Scanner(System.in);
+		System.out.printf("숫자1: ");
+		int num1 =scanner.nextInt();
+		System.out.printf("숫자2: ");
+		int num2 =scanner.nextInt();
+		System.out.printf("숫자3: ");
+		int num3 =scanner.nextInt();
+		int smallest;
+		
+		smallest =  num1 < num2 ? (num1 < num3 ? num1 : num3) : (num2 < num3 ? num2 : num3);
+		System.out.println("가장 작은수는 " + smallest + " 입니다.");
+		
+		scanner.close();
+		// 리팩토링 완료
 		
 	}
-
+	
+	private static void ex23() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("태어난 년도를 입력해 주세요");
+		System.out.print("년도: ");
+		int year = scanner.nextInt();
+		int age = 2024 - year;
+		System.out.println("올해:2024");
+		System.out.println("태어난해:" + year);
+		System.out.println("나이:" + age);
+		System.out.println("===================================");
+		
+		if (age < 20) {
+			System.out.println("20살미만 건강검진대상이 아님");
+		} else {
+			System.out.println("20살 이상");
+			if (year % 2 == 0) {
+				System.out.println("건강검진해");
+			} else{
+				System.out.println("건강검진해 아님");
+			}
+			
+			if (age >= 40) {
+				System.out.println("암 검사");
+			} else {
+				System.out.println("암 검사X");
+			}
+		}
+		scanner.close();
+	}
+	
 }
