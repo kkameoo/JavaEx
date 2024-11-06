@@ -10,7 +10,9 @@ public class ArrayEx {
 //		usingArray();
 //		multiDimArrayEx();
 //		arrayCopyForEx();
-		arrayCopySystem();
+//		arrayCopySystem();
+		enhancedFor();
+		
 	}
 	
 	private static void usingArray() {
@@ -90,6 +92,21 @@ public class ArrayEx {
 		System.arraycopy(source, 0, target, 0, source.length);
 		// 원본 배열, 시작인덱스, 타겟 배열, 타겟 배열의 시작인덱스, 복사할 길이
 		System.out.println("복사본 : " + Arrays.toString(target));
+	}
+	
+	private static void enhancedFor() {
+		// 일반적인 for문
+		int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		
+		for (int i = 0; i < nums.length; i++) {
+			System.out.print(nums[i] + "\t");
+		}
+		System.out.println();
+		
+		for (int num: nums) {
+			System.out.print(num + "\t");
+		}
+		System.out.println();
 	}
 		
 }
