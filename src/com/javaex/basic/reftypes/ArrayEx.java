@@ -8,7 +8,9 @@ public class ArrayEx {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 //		usingArray();
-		multiDimArrayEx();
+//		multiDimArrayEx();
+//		arrayCopyForEx();
+		arrayCopySystem();
 	}
 	
 	private static void usingArray() {
@@ -66,4 +68,28 @@ public class ArrayEx {
 			System.out.println();
 		}
 	}
+	
+	private static void arrayCopyForEx() {
+		//배열 크기 변경 - 배열 생성 복사
+		int source[] = {1, 2, 3};
+		
+		int target[] = new int[10];
+		
+		for (int i = 0; i < source.length; i++) {
+			target[i] = source[i];
+		}
+		System.out.println("복사본:" + Arrays.toString(target));
+	}
+	
+	private static void arrayCopySystem() {
+		// 더 쉬운 방법
+		int[] source = {1, 2, 3};
+		System.out.println("원본 + " + Arrays.toString(source));
+		
+		int[] target = new int[10];
+		System.arraycopy(source, 0, target, 0, source.length);
+		// 원본 배열, 시작인덱스, 타겟 배열, 타겟 배열의 시작인덱스, 복사할 길이
+		System.out.println("복사본 : " + Arrays.toString(target));
+	}
+		
 }
