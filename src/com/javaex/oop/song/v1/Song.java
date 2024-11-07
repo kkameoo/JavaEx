@@ -49,7 +49,16 @@ public class Song {
 		this.track = track;
 	}
 	
+	public Song(String title, String artist, String album, String composer, int year, String track) {
+		this.title = title;
+		this.artist = artist;
+		this.album = album;
+		this.composer = composer;
+		this.year = year;
+		this.track = track;
+	}
+	
 	public void showInfo() {
-		System.out.printf("%s, %s ( %s, %d, %s, %s 작곡)", artist, title, album, year, track, composer);
+		System.out.printf("%s, %s (%s, %d, %s, %s 작곡)%n", artist, title, album, year, track, composer);
 	}	
 }
