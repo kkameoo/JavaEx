@@ -50,12 +50,19 @@ public class Song {
 	}
 	
 	public Song(String title, String artist, String album, String composer, int year, String track) {
-		this.title = title;
-		this.artist = artist;
+		this(title, artist);
 		this.album = album;
 		this.composer = composer;
 		this.year = year;
 		this.track = track;
+	}
+	
+	public Song() {
+	}
+	
+	public Song(String title, String artist) {
+		this.title = title;
+		this.artist = artist;
 	}
 	
 	public void showInfo() {
