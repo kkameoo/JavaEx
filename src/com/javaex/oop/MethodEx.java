@@ -19,7 +19,23 @@ public class MethodEx {
 		System.out.println("getSumArr : " + getSumArr(new double[] { 1, 2, 3, 4, 5, 6, 7, 8}));
 		// 방법2, 가변 인수를 적용
 		System.out.println("getSumVar : " + getSumVar(1, 2, 3, 4, 5, 6, 7, 8));
+		// 일반 매개 변수와 가변 매개변수를 함께 사용할 때
+		// 일반 매개 변수 먼저, 가변인수 나중에 선언
+		printSum("함산값", 1, 2 ,3, 4, 5, 6, 7, 8);
 	}
+	
+	private static void printSum(String message ,double ... values) {
+		double total = 0;
+		
+		for (double value: values) {
+			total += value;
+		}
+		
+		System.out.println(message + " : " + total);
+	}
+	
+	
+	
 	
 	private static double getSumVar(double ... values) {
 		double total = 0;
