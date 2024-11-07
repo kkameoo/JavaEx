@@ -33,6 +33,11 @@ Main 메서드는 static인 이유
 
     실행문은 인스턴스가 생성되기 전에 먼저 생성되어야 하므로 static으로 선언한다.
 
+import
+
+    - browse -> 압출파일 선택
+    - build path -> library -> 기존 자바 버전 삭제하고 현재 버전 추가하기
+
 ---
 
 ---
