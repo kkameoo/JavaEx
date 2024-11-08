@@ -1,5 +1,6 @@
 package com.javaex.practice05.ex07;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class FriendApp {
@@ -17,11 +18,12 @@ public class FriendApp {
 		String[] c = name(scanner);
 		Freind h3 = new Freind(c[0], c[1], c[2]);
 		
-//		Friend[] arrayH = {h1, h2, h3};
+		Freind arrayH[] = {h1, h2, h3};
 		
-		System.out.printf("이름:%s  핸드폰:%s  학교:%s%n", h1.getName(), h1.getNumber(), h1.getSchool());
-		System.out.printf("이름:%s  핸드폰:%s  학교:%s%n", h2.getName(), h2.getNumber(), h2.getSchool());
-		System.out.printf("이름:%s  핸드폰:%s  학교:%s%n", h3.getName(), h3.getNumber(), h3.getSchool());
+		for (Freind h : arrayH) {
+			System.out.printf("이름:%s  핸드폰:%s  학교:%s%n", h.getName(), h.getNumber(), h.getSchool());
+			
+		}
 		scanner.close();
 	}
 	
