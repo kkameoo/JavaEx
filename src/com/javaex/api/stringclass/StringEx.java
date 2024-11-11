@@ -28,5 +28,4 @@ public class StringEx {
 		String s5 = String.valueOf(PI);
 		System.out.println(s5);
 	}
-
 }
