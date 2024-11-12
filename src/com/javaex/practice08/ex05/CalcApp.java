@@ -9,16 +9,24 @@ public class CalcApp {
 		
 		while(true) {
 			System.out.print(">> ");
-			String numline = scanner.nextLine();
-			if (numline == "/q") {
-				System.out.println("종료합니다.");
-				break;
-			}
-			
+			String numline = scanner.nextLine();		
 			String num[] = numline.split(" ");
-			int a = Integer.parseInt(num[0]);
-			int b = Integer.parseInt(num[2]);
+			int a = 0;
+			int b = 0;
 			
+			try {
+				a = Integer.parseInt(num[0]);
+				b = Integer.parseInt(num[2]);
+			} catch (Exception e) {
+				if (numline.equals("/q")) {
+					System.out.println("종료합니다.");
+					break;
+				}
+				System.out.println("잘못된 입력, 종료합니다.");
+				break;
+				// TODO: handle exception
+			}
+				
 			switch (num[1]) {
 			case "+": {
 				Add add = new Add();

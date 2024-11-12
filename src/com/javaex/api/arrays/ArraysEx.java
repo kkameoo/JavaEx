@@ -23,7 +23,7 @@ public class ArraysEx {
 						target, 0, // target의 0번부터 복사
 						src.length); // src.length 만큼 길이를 복사
 		System.out.println(Arrays.toString(target));
-	
+		
 		// Arrays.copyof를 이용한 카피
 		target = Arrays.copyOf(src, 5);
 		System.out.println("copyof : " + Arrays.toString(target));
