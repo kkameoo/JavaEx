@@ -1,28 +1,49 @@
 package com.javaex.practice08.ex05;
 
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class CalcApp {
 
 	public static void main(String[] args) {
-
-		int sum = 0;
-		Scanner sc = new Scanner(System.in);
-		System.out.println("숫자를 공백으로 구분해서 입력하세요");
-		String numLine = sc.nextLine();
-
-		//코드를 작성하세요
-		String num[] = numLine.split(" ");
-		System.out.println(Arrays.toString(num));
+		Scanner scanner = new Scanner(System.in);
 		
-		for (String a : num) {
-			sum += Integer.valueOf(a);
+		while(true) {
+			System.out.print(">> ");
+			String numline = scanner.nextLine();
+			if (numline == "/q") {
+				System.out.println("종료합니다.");
+				break;
+			}
+			
+			String num[] = numline.split(" ");
+			int a = Integer.parseInt(num[0]);
+			int b = Integer.parseInt(num[2]);
+			
+			switch (num[1]) {
+			case "+": {
+				Add add = new Add();
+				System.out.println(">> " + add.calculate(a, b));
+				break;
+			}
+			case "-": {
+				Sub sub = new Sub();
+				System.out.println(">> " + sub.calculate(a, b));
+				break;
+			}
+			case "*": {
+				Mul mul = new Mul();
+				System.out.println(">> " + mul.calculate(a, b));
+				break;
+			}
+			case "/": {
+				Div div = new Div();
+				System.out.println(">> " + div.calculate(a, b));
+				break;
+			}
+			default:
+				System.out.println("알 수 없는 연산입니다.");
+				break;
+			}
 		}
-		
-		System.out.println("합:" + sum);
-		
-		sc.close();
 	}
 }
