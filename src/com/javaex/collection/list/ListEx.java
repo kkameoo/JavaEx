@@ -24,7 +24,7 @@ public class ListEx {
 		System.out.println(lst);
 		// 객체 중간에 삼입
 		lst.add(2, "C#");
-		System.out.println(lst);
+		System.out.println(lst.get(0));
 		
 		// 객체 삭제 : 인덱스로 삭제
 		lst.remove(5);
