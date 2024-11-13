@@ -5,9 +5,18 @@
 <h2>2024.11.13</h2>
 
 ---
-hashcode
+HashSet
 
-    -
+    - java.util.HashSet
+    - 자료의 순서가 없음 중복 불가능
+    - 해쉬테이블에서 키 없이 값들만 존재하는 경우
+    - 검색이 빠르다
+HashCode
+
+    - 객체를 식별할 하나의 정수값을 의미
+    - Object의 hashCode()메서드는 객체의 메모리번지를 이용해 해쉬코드를 만들어 리턴
+        -> 모든 객체는 다른 값을 가진다
+    - Hash 관련 컬렉션들은 hashcode()값을 비교하고 equals()로 값을 비교해서 동등객체인지 판단
 
     동일성
 
@@ -16,7 +25,23 @@ hashcode
 
         - 내부 객체가 같은 자격을 가짐
 
+hashTable
 
+    - key - hashset
+    - key값은 중복 불가능 순서도 없음
+    - value - list
+    - 두 쌍을 map 인터페이스를 다루는 자료구조
+    
+Enumration
+
+    - 벡터와 해시테이블에 존재하는 요소들에 대한 접근방식을 제공하는 인터페이스
+    - vector, hashtable 사용
+    
+iterator
+
+    - 자바에서 제공하는 컬렉션에 대해 각 항목들을 순차적으로 접근하는데 사용
+    - 값이 많으면 사용
+    - set, List 사용
 
 ---
 ---

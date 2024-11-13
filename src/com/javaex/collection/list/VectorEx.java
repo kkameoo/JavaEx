@@ -1,5 +1,6 @@
 package com.javaex.collection.list;
 
+import java.util.Enumeration;
 import java.util.Vector;
 
 public class VectorEx {
@@ -61,6 +62,21 @@ public class VectorEx {
 //		v2.addElement(new String("Java")); -> String은 에러
 		
 		System.out.println(v2);
+		
+		v2.addElement(20);
+		v2.addElement(30);
+		v2.addElement(40);
+		// 효율적인 순회를 위해 Enumeration 객체를 제공
+		
+		System.out.println("===== Enumeration");
+		
+		Enumeration<? super Number> e =  v2.elements();
+		
+		while (e.hasMoreElements()) { // 뒤에 요소가 더 있는가?
+//			Number item = e.nextElement();
+			System.out.println(e.nextElement());
+			
+		}
 		
 	}
 
