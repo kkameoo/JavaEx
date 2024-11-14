@@ -16,7 +16,7 @@ public abstract class Shape {
 		return countSides;
 	}
 	
-	public abstract void getArea();
+	public abstract double getArea();
 
-	public abstract void getPerimeter();
+	public abstract double getPerimeter();
 }

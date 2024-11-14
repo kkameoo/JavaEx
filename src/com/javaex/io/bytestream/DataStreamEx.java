@@ -55,6 +55,7 @@ public class DataStreamEx {
 			// 주의 : 출려된 순서대로 읽어와야 함
 			
 			for (int i = 0; i < 3; i++) {
+				
 				String s = dis.readUTF();
 				Boolean b = dis.readBoolean();
 				Integer val = dis.readInt();

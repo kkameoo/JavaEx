@@ -50,10 +50,78 @@ Writer
     write(String str)
         - 매개변수로 주어진 str 문자열을 출력 스트림으로 전송
 
+보조 스트림
 
+    데코레이터 패턴
 
+        - 객체의 추가적인 요건을 동적으로 첨가
+        - 서브클래스를 만드는 방식으로 기능을 유연하게 확장할 수 있는 방법을 제공
+        - 장식할 대상과 장식을 동일시하는 패턴
 
+FilterInputStream, FilterOutputStream
 
+    - 모든 바이트 기반 보조스트림의 최고조상
+    - 보조스트림은 자체적으로 입출력 x
+    - 상속을 통해 read() 와 write()을 오버라이딩
+
+BufferedInputStream, BufferedOutputStream
+
+    - 입출력 효율을 높이기 위해 버퍼(byte[])를 사용하는 보조 스트림
+    - 보조스트림을 닫으면 기반스트림도 닫힌다
+    - 반대로 기반스트림이 닫히면 보조스트림도 닫힌다
+
+BufferedReader, BufferedWriter
+
+    - 입출력 효율을 높이기 위해 버퍼(char[])을 사용
+    - 라인(line) 단위의 입출력에 편리
+
+InputStreamReader, OutputStreamWriter
+
+    - 바이트 기반 스트림을 문자 기반 스트림처럼 사용할 수 있게 해준다.
+    - 요즘은 scanner 클래스로 대체가 가능해서 잘 사용하지 않는다.
+
+DataInputStream, DataOutputStream
+
+    - 바이트 기반 스트림은 기본 데이터 타입을 입출력 할 수 없다
+    - DataInputStream, DataOutputStream을 이용하면 가능하게 해준다
+    - 주의점 - DataInputStream으로 읽을 때는 DataOutputStream에서 출력한 순서대로 읽어와야한다
+    - 각 데이터 타입의 크기가 모두 다르기 때문
+
+표준 입출력
+
+    - System.in - 콘솔로부터 데이터를 입력 받는데 사용
+    - System.out - 콘솔로 데이터를 출력하는데 사용
+    - System.err - 콘솔로 데이터를 출력하는데 사용
+    - System클래스의 전역 변수
+    - JVM이 시작되면서 자동적으로 생성되는 스트림
+
+close()
+
+    사용이유
+        - 비정상적으로 프로그램이 끝났을 경우 파일이 손상되는 것을 막아줌
+        - 파일에 출력한 이후 close를 해줘야 읽을 수 있음
+
+StringTokenizer
+
+    - 문자열을 특정 구분자 기준으로 분리해내는 기능 수행
+
+scanner
+
+    - BufferedReader 와 FileReader, StringTokenizer 조합 대신 사용
+
+scanner 클래스가 있는데도, BufferedReader 클래스를 InputStream, InputStreamReader, FileReader 등과 조합해서 사용하는 이유
+
+    - 하나의 업무를 하나의 클래스에서 수행하여 클래스의 변경 없이 다양한 경우에 조합해서 사용 가능
+    - Scanner 클래스로 처리 가능한 경우는 Scanner 클래스 사용을 추천
+
+next()
+
+    - 띄어쓰기 불가능
+
+nextLine()
+
+    - 띄어쓰기 포함
+    - next()와 혼용하지 않고 사용해야함
 ---
 ---
 <h2>2024.11.13</h2>

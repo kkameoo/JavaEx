@@ -1,25 +1,25 @@
 package com.javaex.practice09.ex04;
 
 public class RectTriangle extends Shape{
-	int width;
-	int height;
-	
-
-	
-	
+	double width;
+	double height;
 	
 	
 	@Override
-	public void getArea() {
-		
+	public double getArea() {
+		double area = (width * height) / 2;
+		return area;
 	}
 	
 	@Override
-	public void getPerimeter() {
-		
+	public double getPerimeter() {
+		double perimeter = Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2)) + width + height;
+		return perimeter;
 	}
 	
-	public void RectTriangle(double w, double h) {
-		
+	public RectTriangle(double width, double height) {
+		super(3);
+		this.width = width;
+		this.height = height;
 	}
 }
