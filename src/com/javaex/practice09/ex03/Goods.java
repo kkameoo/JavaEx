@@ -33,4 +33,7 @@ public class Goods {
 		this.count = count;
 	}
 	
+	public void showInfo() {
+		System.out.printf("%s(가격:%d원)이 %d 개 입고 되었습니다.%n", name, price, count);
+	}
 }
