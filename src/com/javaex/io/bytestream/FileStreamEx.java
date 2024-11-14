@@ -11,7 +11,6 @@ public class FileStreamEx {
 
 	// 프로젝트 내의 files 디렉토리 위치
 	static final String rootPath = System.getProperty("user.dir") + "\\files\\";
-	
 	static final String source = rootPath + "img.jpg";
 	static final String target= rootPath + "img_copy.jpg";
 	

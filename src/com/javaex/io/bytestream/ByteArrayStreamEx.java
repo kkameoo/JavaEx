@@ -20,7 +20,7 @@ public class ByteArrayStreamEx {
 				// Auto Closeable
 			InputStream bis = new ByteArrayInputStream(intsrc);
 			OutputStream bos = new ByteArrayOutputStream();
-		) {
+				) {
 			int data = 0; // 입력 스트림으로부터 넘어오는 데이터 저장 변수
 			
 			while ((data = bis.read()) != -1) {
